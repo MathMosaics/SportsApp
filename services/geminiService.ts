@@ -2,13 +2,17 @@ import { GoogleGenAI } from "@google/genai";
 import { type Analysis, type Source, type Game, type TeamStatsData, type Underdog } from '../types.ts';
 import { cacheService } from './cacheService.ts';
 
-// FIX: Use process.env.API_KEY as per guidelines to fix TypeScript error and align with standards.
-// The API key must be obtained exclusively from the environment variable `process.env.API_KEY`.
-if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable is not set. Please ensure it is configured.");
+// FIX: Switched from import.meta.env.VITE_API_KEY to process.env.API_KEY to resolve a TypeScript
+// error and align with the @google/genai coding guidelines, which mandate using process.env.API_KEY.
+const apiKey = process.env.API_KEY;
+
+if (!apiKey) {
+    // This error will be shown in the browser's console if the key is missing.
+    throw new Error("API_KEY environment variable not found. Please ensure it is configured in your deployment settings.");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: apiKey });
+
 
 // Cache TTLs (Time-To-Live) in milliseconds
 const ONE_HOUR = 60 * 60 * 1000;
