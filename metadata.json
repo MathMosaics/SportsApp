@@ -1,0 +1,5 @@
+{
+  "name": "Sports Bet Analyzer AI",
+  "description": "An AI-powered tool that analyzes sports matchups using real-time data from the web to predict the more likely winner.",
+  "requestFramePermissions": []
+}
