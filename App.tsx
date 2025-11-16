@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Header } from '/components/Header.tsx';
-import { MatchupAnalyzer } from '/components/MatchupAnalyzer.tsx';
-import { TeamStats } from '/components/TeamStats.tsx';
-import { BettingGuide } from '/components/BettingGuide.tsx';
-import { TrophyIcon, ChartBarIcon, BookOpenIcon } from '/components/Icons.tsx';
+import { Header } from './components/Header.tsx';
+import { MatchupAnalyzer } from './components/MatchupAnalyzer.tsx';
+import { TeamStats } from './components/TeamStats.tsx';
+import { BettingGuide } from './components/BettingGuide.tsx';
+import { TrophyIcon, ChartBarIcon, BookOpenIcon } from './components/Icons.tsx';
 
 type Tab = 'analyzer' | 'stats' | 'guide';
 
